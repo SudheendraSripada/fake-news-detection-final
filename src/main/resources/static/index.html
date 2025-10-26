@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🔍 Fake News Detector</h1>
+        <p class="subtitle">Enter news content to verify its authenticity</p>
+    </header>
+
+    <main>
+        <form id="newsForm">
+            <div class="form-group">
+                <label for="title">News Title:</label>
+                <input type="text" id="title" placeholder="Enter news headline" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">News Content:</label>
+                <textarea id="content" rows="8" placeholder="Enter the full news article content here..." required></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span id="btnText">🔎 Check News</span>
+                <span id="btnLoading" class="hidden">⏳ Analyzing...</span>
+            </button>
+        </form>
+
+        <div id="result" class="result hidden"></div>
+
+        <section class="news-list">
+            <h2>📰 Recent News Checks</h2>
+            <div id="newsList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Fake News Detection System | Powered by Spring Boot & MySQL</p>
+    </footer>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
