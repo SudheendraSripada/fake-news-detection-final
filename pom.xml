@@ -64,6 +64,7 @@
     </dependencies>
 
     <build>
+        <finalName>detection</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -80,4 +81,5 @@
         </plugins>
     </build>
 
+    <finalName>detection</finalName>
 </project>
