@@ -1,15 +1,9 @@
 package com.fakenews.detection.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "news")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class News {
 
     @Id
@@ -25,5 +19,47 @@ public class News {
     @Column(name = "is_fake")
     private boolean fake;
 
-    // No need to write getters/setters - Lombok generates them!
+    // Default Constructor
+    public News() {
+    }
+
+    // Parameterized Constructor
+    public News(String title, String content, boolean fake) {
+        this.title = title;
+        this.content = content;
+        this.fake = fake;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public boolean isFake() {
+        return fake;
+    }
+
+    public void setFake(boolean fake) {
+        this.fake = fake;
+    }
 }
