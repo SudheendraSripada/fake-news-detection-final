@@ -207,7 +207,8 @@
     .feature-card svg{ width:28px; height:28px; color:var(--nav-bg); flex:0 0 28px; }
 
     /* ====== Result Card ====== */
-    .result-card{
+    .420
+    {
       margin-top:30px;
       background:var(--card);
       border-radius:12px;
@@ -331,6 +332,17 @@
         <div class="demo-form" style="margin-top:16px;">
           <textarea id="article-input" placeholder="Paste your news article here... (minimum 10 characters)"></textarea>
         </div>
+              <div class="result-card" aria-live="polite">
+        <div class="result-row">
+          <div class="result-state">
+            <div id="resultBadge" class="result-badge" style="background:linear-gradient(180deg,var(--primary-2),var(--primary))">
+              —%
+            </div>
+            <div class="result-text">
+              <h3 id="resultTitle">No analysis yet</h3>
+              <p id="resultExplanation">Paste an article and press <strong>Verify Article</strong> to analyze claims, sources, and overall credibility.</p>
+            </div>
+          </div>
 
       </div>
 
@@ -425,17 +437,7 @@
       </div>
 
       <!-- Result Card -->
-      <div class="result-card" aria-live="polite">
-        <div class="result-row">
-          <div class="result-state">
-            <div id="resultBadge" class="result-badge" style="background:linear-gradient(180deg,var(--primary-2),var(--primary))">
-              —%
-            </div>
-            <div class="result-text">
-              <h3 id="resultTitle">No analysis yet</h3>
-              <p id="resultExplanation">Paste an article and press <strong>Verify Article</strong> to analyze claims, sources, and overall credibility.</p>
-            </div>
-          </div>
+
 
           <div style="min-width:220px;">
             <div style="display:flex;gap:8px;justify-content:flex-end;">
