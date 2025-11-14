@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="google-site-verification" content="Q_daCwKtlJGWcvooAYlrprycwmNpahnuhRJHfK_RRXg" />
   <title>FakeNews Detector — Demo</title>
 
   <!-- Google Fonts -->
@@ -45,7 +46,8 @@
       padding:24px;
     }
 
-    /* ====== Navbar ====== */
+    /* ====== Navbar ====== */      
+    
     .navbar{
       background:var(--nav-bg);
       color:var(--card);
@@ -155,42 +157,388 @@
     }
 
     /* ====== Section: How it works ====== */
-    section{margin-top:36px;}
-    .section-title{text-align:center;font-size:28px;margin:24px 0;font-weight:700;color:var(--nav-bg);}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
-    .step{background:var(--card);border-radius:12px;padding:28px 20px;text-align:center;box-shadow: var(--glass-shadow);transition: transform .18s ease, box-shadow .18s;}
+    section{
+      margin-top:36px;
+    }
+    .section-title{
+      text-align:center;
+      font-size:28px;
+      margin:24px 0;
+      font-weight:700;
+      color:var(--nav-bg);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:8px;
+    }
+    .step{
+      background:var(--card);
+      border-radius:12px;
+      padding:28px 20px;
+      text-align:center;
+      box-shadow: var(--glass-shadow);
+      transition: transform .18s ease, box-shadow .18s;
+    }
     .step:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.08); }
     .step svg{ width:72px; height:72px; color:var(--nav-bg); margin-bottom:8px; }
     .step h4{ margin:8px 0 6px 0; font-size:18px; font-weight:700; color:var(--nav-bg); }
     .step p{ margin:0; font-size:14px; color:var(--soft-text); }
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px;}
-    .feature-card{background:var(--card);padding:20px;border-radius:12px;display:flex;align-items:center;gap:12px;box-shadow: var(--glass-shadow);border:1px solid rgba(2,6,23,0.03);}
+
+    /* ====== Feature Grid ====== */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+    .feature-card{
+      background:var(--card);
+      padding:20px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      box-shadow: var(--glass-shadow);
+      border:1px solid rgba(2,6,23,0.03);
+    }
     .feature-card svg{ width:28px; height:28px; color:var(--nav-bg); flex:0 0 28px; }
-    .result-card{margin-top:30px;background:var(--card);border-radius:12px;padding:18px;box-shadow: var(--glass-shadow);border:1px solid rgba(2,6,23,0.03);}
-    .result-row{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-    .result-state{display:flex;gap:18px;align-items:center;}
-    .result-badge{width:110px;height:110px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:20px;color:white;box-shadow: 0 10px 30px rgba(2,6,23,0.06);}
+
+    /* ====== Result Card ====== */
+    .result-card{
+      margin-top:30px;
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow: var(--glass-shadow);
+      border:1px solid rgba(2,6,23,0.03);
+    }
+    .result-row{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .result-state{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .result-badge{
+      width:110px;
+      height:110px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:20px;
+      color:white;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+    }
     .result-text h3{ margin:0; font-size:18px; color:var(--nav-bg); }
     .result-text p{ margin:6px 0 0 0; color:var(--soft-text) }
-    .demo-form{margin-top:18px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;}
-    textarea{min-height:120px;width: 100%;max-width:760px;padding:14px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);resize:vertical;font-size:15px;color:var(--nav-bg);outline:none;}
-    .controls{display:flex;flex-direction:column;gap:10px;}
-    .btn-secondary{background:white;border:1px solid rgba(15,23,42,0.08);padding:12px 16px;border-radius:10px;cursor:pointer;font-weight:600;}
-    footer{margin-top:56px;padding:28px 0;text-align:center;color:var(--muted);}
-    @media (max-width:980px){.hero{ grid-template-columns: 1fr; text-align:center; }.hero-visual{ order:-1; }.steps{ grid-template-columns:1fr; }.features{ grid-template-columns:1fr; }.result-row{ flex-direction:column; align-items:flex-start; }}
+
+    /* ====== Input form for demo ====== */
+    .demo-form{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    textarea{
+      min-height:120px;
+      width: 100%;
+      max-width:760px;
+      padding:14px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,42,0.06);
+      resize:vertical;
+      font-size:15px;
+      color:var(--nav-bg);
+      outline:none;
+    }
+    .controls{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .btn-secondary{
+      background:white;
+      border:1px solid rgba(15,23,42,0.08);
+      padding:12px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    /* ====== Footer ====== */
+    footer{
+      margin-top:56px;
+      padding:28px 0;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* ====== Utilities & Responsive ====== */
+    @media (max-width:980px){
+      .hero{ grid-template-columns: 1fr; text-align:center; }
+      .hero-visual{ order:-1; }
+      .steps{ grid-template-columns:1fr; }
+      .features{ grid-template-columns:1fr; }
+      .result-row{ flex-direction:column; align-items:flex-start; }
+    }
   </style>
 </head>
 <body>
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-<div class="nav-inner"><a class="brand" href="#" aria-label="FakeNews Detector home">
-<div class="logo" aria-hidden="true">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="white" stroke-width="2"></circle><path d="M12 8v4l3 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</div><h1>FakeNews Detector</h1></a><div><button class="nav-cta" id="top-cta">Get Started</button></div></div></nav>
-<main class="container" role="main">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-left"><h2 id="hero-title">Detect Fake News<br/>Instantly with AI</h2>
-<p>Our advanced AI scans news and social posts for credibility, giving you a confidence score and detailed reasoning.</p>
-<div class="cta-row"><button class="btn-primary" id="verify-btn">Verify Article</button><button class="btn-secondary" id="try-sample">Try sample</button></div>
-<div class="demo-form" style="margin-top:16px;"><textarea id="article-input" placeholder="Paste your news article here... (minimum 10 characters)"></textarea></div></div>
-<div class="hero-visual" aria-hidden="true"><div class="big-icon" role="img" aria-label="AI analysis illustration">
-<svg width="140" height="140" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="8" width="34" height="44" rx="3" stroke="currentColor" stroke-width="2"></rect><path d="M22 16h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="46" cy="28" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M43 28h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="10" y="54" width="44" height="4" rx="1.5" fill="rgba(56,189,248,0.06)"></rect></svg>
-</div></div></section>
+
+  <!-- NAV -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#" aria-label="FakeNews Detector home">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="8" stroke="white" stroke-width="2"></circle>
+            <path d="M12 8v4l3 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1>FakeNews Detector</h1>
+      </a>
+      <div>
+        <button class="nav-cta" id="top-cta">Get Started</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTAINER -->
+  <main class="container" role="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h2 id="hero-title">Detect Fake News<br/>Instantly with AI</h2>
+        <p>Our advanced AI scans news and social posts for credibility, giving you a confidence score and detailed reasoning.</p>
+
+        <div class="cta-row">
+          <button class="btn-primary" id="verify-btn">Verify Article</button>
+          <button class="btn-secondary" id="try-sample">Try sample</button>
+        </div>
+
+        <!-- Demo input area -->
+        <div class="demo-form" style="margin-top:16px;">
+          <textarea id="article-input" placeholder="Paste your news article here... (minimum 10 characters)"></textarea>
+        </div>
+
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="big-icon" role="img" aria-label="AI analysis illustration">
+          <svg width="140" height="140" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="8" width="34" height="44" rx="3" stroke="currentColor" stroke-width="2"></rect>
+            <path d="M22 16h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="46" cy="28" r="8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M43 28h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <rect x="10" y="54" width="44" height="4" rx="1.5" fill="rgba(56,189,248,0.06)"></rect>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section aria-labelledby="how-title">
+      <h3 class="section-title" id="how-title">How It Works</h3>
+
+      <div class="steps" role="list">
+        <div class="step" role="listitem" aria-label="Paste Article step">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 3h6l4 4v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 9h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M11 17l4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M16 20l3-3-3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h4>Paste Article</h4>
+          <p>Copy any news article or text into the verification form.</p>
+        </div>
+
+        <div class="step" role="listitem" aria-label="AI analyzes step">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="6" y="7" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="9.5" cy="11" r="1" fill="currentColor"/>
+            <circle cx="14.5" cy="11" r="1" fill="currentColor"/>
+            <path d="M8 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M16 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M12 5v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M12 17v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <h4>AI Analyzes</h4>
+          <p>Scan and process the text using NLP and reference checks.</p>
+        </div>
+
+        <div class="step" role="listitem" aria-label="Get results step">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M9.5 12.5l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h4>Get Results</h4>
+          <p>Receive instant verification with a confidence score.</p>
+        </div>
+      </div>
+
+      <!-- WHY CHOOSE -->
+      <h3 class="section-title" style="margin-top:34px">Why Choose Our Platform?</h3>
+
+      <div class="features" role="list">
+        <div class="feature-card" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5 11h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div>
+            <div style="font-weight:700;color:var(--nav-bg)">Instant Analysis</div>
+            <div style="font-size:13px;color:var(--soft-text)">Fast scoring & feedback.</div>
+          </div>
+        </div>
+
+        <div class="feature-card" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 1l0 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><rect x="4" y="6" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div style="font-weight:700;color:var(--nav-bg)">Secure & Private</div>
+            <div style="font-size:13px;color:var(--soft-text)">We do not store articles by default.</div>
+          </div>
+        </div>
+
+        <div class="feature-card" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div style="font-weight:700;color:var(--nav-bg)">Multi-language Support</div>
+            <div style="font-size:13px;color:var(--soft-text)">Detects claims across languages.</div>
+          </div>
+        </div>
+
+        <div class="feature-card" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div style="font-weight:700;color:var(--nav-bg)">AI-Powered Accuracy</div>
+            <div style="font-size:13px;color:var(--soft-text)">Combines heuristics & sources.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="result-card" aria-live="polite">
+        <div class="result-row">
+          <div class="result-state">
+            <div id="resultBadge" class="result-badge" style="background:linear-gradient(180deg,var(--primary-2),var(--primary))">
+              —%
+            </div>
+            <div class="result-text">
+              <h3 id="resultTitle">No analysis yet</h3>
+              <p id="resultExplanation">Paste an article and press <strong>Verify Article</strong> to analyze claims, sources, and overall credibility.</p>
+            </div>
+          </div>
+
+          <div style="min-width:220px;">
+            <div style="display:flex;gap:8px;justify-content:flex-end;">
+              <div style="text-align:right;color:var(--soft-text);font-size:13px">Model: DemoAI v1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- small details -->
+        <div style="margin-top:14px;color:var(--muted);font-size:13px">
+          <strong>Note:</strong> This is a demo UI. The result below is simulated by the demo script — replace the mock function in the JS with your real backend call.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> FakeNews Detector — Built with care • <a href="#" style="color:inherit;text-decoration:underline;">Privacy</a>
+    </footer>
+
+  </main>
+
+  <script>
+    // Small demo JS: simulate analysis result
+    const articleInput = document.getElementById('article-input');
+    const verifyBtn = document.getElementById('verify-btn');
+    const trySample = document.getElementById('try-sample');
+    const topCta = document.getElementById('top-cta');
+    const resultBadge = document.getElementById('resultBadge');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultExplanation = document.getElementById('resultExplanation');
+    const yearSpan = document.getElementById('year');
+    yearSpan.textContent = new Date().getFullYear();
+
+    // Sample content
+    const sampleText = 'Scientists report a new study showing X reduces Y by 50%. Sources: example.edu, science-journal.org.';
+
+    // Try Sample button
+    trySample.addEventListener('click', () => {
+      articleInput.value = sampleText;
+      articleInput.focus();
+    });
+
+    // Top CTA scroll to input
+    topCta.addEventListener('click', () => {
+      articleInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      articleInput.focus();
+    });
+
+    // Verify Article button
+    verifyBtn.addEventListener('click', async () => {
+      const text = (articleInput.value || "").trim();
+      if (text.length < 10) {
+        alert("Please paste at least 10 characters of text to analyze.");
+        articleInput.focus();
+        return;
+      }
+
+      // disable UI while "analyzing"
+      verifyBtn.disabled = true;
+      verifyBtn.textContent = "Analyzing...";
+      verifyBtn.style.opacity = "0.85";
+
+      // simulate network / processing delay
+      await new Promise(r => setTimeout(r, 900 + Math.random()*1000));
+
+      // DEMO: simulated analysis — in real app, call your API here and populate result values
+      // The simulated score is based on word length + random factor
+      const len = text.length;
+      const base = Math.min(95, Math.round((len / 400) * 80)); // longer text -> higher confidence (demo)
+      const randomFactor = Math.round(Math.random()*20 - 8);
+      const score = Math.max(5, Math.min(99, base + randomFactor));
+
+      // determine label
+      let label, bg;
+      if (score >= 70){
+        label = "Likely True";
+        bg = "linear-gradient(180deg,var(--primary-2),var(--primary))";
+      } else if (score >= 40){
+        label = "Uncertain";
+        bg = "linear-gradient(180deg,#FBBF24,#F97316)"; // yellow/orange
+      } else {
+        label = "Likely False";
+        bg = "linear-gradient(180deg,#FB7185,#EF4444)"; // pink/red
+      }
+
+      // update UI
+      resultBadge.style.background = bg;
+      resultBadge.textContent = score + "%";
+      resultTitle.textContent = label;
+      resultExplanation.textContent = "Confidence score generated by demo model. Replace with your real analysis results and explanation to show sources, claim checks, and reasoning.";
+
+      // restore button
+      verifyBtn.disabled = false;
+      verifyBtn.textContent = "Verify Article";
+      verifyBtn.style.opacity = "1";
+    });
+
+    // small enhancement: hit ctrl+enter to submit
+    articleInput.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        verifyBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
