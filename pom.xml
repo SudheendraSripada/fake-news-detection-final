@@ -55,6 +55,34 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+             
+        <!-- HuggingFace Transformers for ML Classification -->
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>djl-huggingface</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+        
+        <!-- Deep Java Library for ML -->
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>djl-api</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+        
+        <!-- PyTorch Engine for DJL -->
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>djl-pytorch-engine</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+        
+        <!-- JSON processing for model responses -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
     </dependencies>
 
     <build>
