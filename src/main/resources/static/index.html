@@ -500,23 +500,54 @@
       verifyBtn.textContent = "Analyzing...";
       verifyBtn.style.opacity = "0.85";
 
-      // simulate network / processing delay
-      await new Promise(r => setTimeout(r, 900 + Math.random()*1000));
+try {
+    // Real API call to your HuggingFace ML backend
+    const API_URL = "http://localhost:8080/api/ml/predict"; // Change to your deployed backend URL
+    
+    const resp = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text })
+    });
 
-      // DEMO: simulated analysis — in real app, call your API here and populate result values
-      // The simulated score is based on word length + random factor
-      const len = text.length;
-      const base = Math.min(95, Math.round((len / 400) * 80)); // longer text -> higher confidence (demo)
-      const randomFactor = Math.round(Math.random()*20 - 8);
-      const score = Math.max(5, Math.min(99, base + randomFactor));
+    if (!resp.ok) throw new Error(`Server returned ${resp.status}`);
 
-      // determine label
-      let label, bg;
-      if (score >= 70){
-        label = "Likely True";
-        bg = "linear-gradient(180deg,var(--primary-2),var(--primary))";
-      } else if (score >= 40){
-        label = "Uncertain";
+    const data = await resp.json();
+    // Expected response: { prediction: "FAKE"|"REAL", confidence: 0.8234, message: "...", text_preview: "..." }
+
+    const score = Math.round((parseFloat(data.confidence) || 0) * 100);
+    let label, bg;
+    if (score >= 70) {
+      label = "Likely True";
+      bg = "linear-gradient(180deg,var(--primary-2),var(--primary))";
+    } else if (score >= 40) {
+      label = "Uncertain";
+      bg = "linear-gradient(180deg,#FBBF24,#F97316)";
+    } else {
+      label = "Likely False";
+      bg = "linear-gradient(180deg,#FB7185,#EF4444)";
+    }
+
+    resultBadge.style.background = bg;
+    resultBadge.textContent = (Number.isFinite(score) ? score + "%" : "—%");
+    resultTitle.textContent = label;
+    resultExplanation.textContent = data.message || `Model: ${data.model || "distilbert-base-uncased"}`;
+
+    console.log("ML response:", data);
+
+  } catch (err) {
+    console.error(err);
+    alert("Analysis failed: " + err.message);
+    resultTitle.textContent = "Error";
+    resultExplanation.textContent = "Could not reach the analysis service. Check network, CORS, and backend URL.";
+    resultBadge.style.background = "linear-gradient(180deg,#FBBF24,#F97316)";
+    resultBadge.textContent = "Err";
+  } finally {
+    // Restore UI
+    verifyBtn.disabled = false;
+    verifyBtn.textContent = "Verify Article";
+    verifyBtn.style.opacity = "1";
+  }        label = "Uncertain";
         bg = "linear-gradient(180deg,#FBBF24,#F97316)"; // yellow/orange
       } else {
         label = "Likely False";
