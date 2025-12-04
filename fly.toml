@@ -1,0 +1,62 @@
+# Fly.io configuration for Fake News Detection Spring Boot application
+app = "fake-news-detection-final"
+
+# Build configuration
+[build]
+  builder = "docker"
+  dockerfile = "./Dockerfile"
+
+# Environment variables
+[env]
+  PORT = "8080"
+  # Database configuration - using H2 in-memory for ML endpoints
+  SPRING_DATASOURCE_URL = "jdbc:h2:mem:fakenews_db;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+  SPRING_DATASOURCE_USERNAME = "sa"
+  SPRING_DATASOURCE_PASSWORD = ""
+  SPRING_JPA_DATABASE = "H2"
+  SPRING_JPA_HIBERNATE_DDL_AUTO = "create-drop"
+
+# Service configuration
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+
+# Health check
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+  
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 100
+    soft_limit = 80
+  
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  
+  [services.tcp_checks]
+    [[services.tcp_checks.tcp_check]]
+      grace_period = "60s"
+      interval = "15s"
+      timeout = "5s"
+      
+  [services.http_checks]
+    [[services.http_checks.http_check]]
+      grace_period = "60s"
+      interval = "15s"
+      timeout = "5s"
+      path = "/api/ml/health"
+      method = "GET"
+
+# Resources
+[[vm]]
+  memory = "1gb"
+  cpus = 1
