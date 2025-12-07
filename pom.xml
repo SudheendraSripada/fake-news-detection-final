@@ -58,7 +58,7 @@
         <!-- HuggingFace Transformers for ML -->
         <dependency>
             <groupId>ai.djl.huggingface</groupId>
-            <artifactId>djl-huggingface</artifactId>
+            <artifactId>tokenizers</artifactId>
             <version>0.28.0</version>
         </dependency>
 
