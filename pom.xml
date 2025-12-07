@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -55,28 +54,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-             
-        <!-- HuggingFace Transformers for ML Classification -->
+
+        <!-- HuggingFace Transformers for ML -->
         <dependency>
             <groupId>ai.djl.huggingface</groupId>
             <artifactId>djl-huggingface</artifactId>
             <version>0.28.0</version>
         </dependency>
-        
+
         <!-- Deep Java Library for ML -->
         <dependency>
             <groupId>ai.djl</groupId>
             <artifactId>djl-api</artifactId>
             <version>0.28.0</version>
         </dependency>
-        
-        <!-- PyTorch Engine for DJL -->
+
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>djl-pytorch-engine</artifactId>
             <version>0.28.0</version>
         </dependency>
-        
+
         <!-- JSON processing for model responses -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -85,8 +83,17 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>djl.ai</id>
+            <name>DJL Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
     <build>
         <finalName>detection</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
