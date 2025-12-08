@@ -65,7 +65,7 @@
         <!-- Deep Java Library for ML -->
         <dependency>
             <groupId>ai.djl</groupId>
-            <artifactId>djl-api</artifactId>
+            <artifactId>api</artifactId>
             <version>0.28.0</version>
         </dependency>
 
